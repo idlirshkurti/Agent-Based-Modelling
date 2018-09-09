@@ -30,7 +30,7 @@ dfy[,c(1, 2)] <- cbind(i, y)
 wealth <- as.data.frame(matrix(0, n, 101))
 
 # Dimension names for the data frames 
-names<-NULL
+names <- NULL
 for(t in 1:102){
 	if(t==1){
 		names[t] <- as.character("Individual")
@@ -47,7 +47,7 @@ init_plot <- ggplot(data = data.frame(x = dfx[,2], y = dfy[,2]), aes(x = x, y = 
 init_plot <- init_plot + geom_point(shape=1) 
 init_plot <- init_plot + xlim(0, 1) + ylim(0, 1)
 init_plot <- init_plot + labs(x = "Final x position",  y = "Final y position", 
-	title = "Initial Positions of Agents")
+	     title = "Initial Positions of Agents")
 pdf("Initial Agents.pdf", 7, 5)
 plot(init_plot)
 dev.off()
@@ -57,7 +57,7 @@ init_obj <- ggplot(data = data.frame(x = x_obj, y = y_obj), aes(x = x, y = y))
 init_obj <- init_obj + geom_point(shape=1) 
 init_obj <- init_obj + xlim(-10, 10) + ylim(-10, 10)
 init_obj <- init_obj + labs(x = "Final x position",  y = "Final y position", 
-	title = "Initial Positions of Objects")
+	    title = "Initial Positions of Objects")
 pdf("Initial Objects.pdf", 7, 5)
 plot(init_obj)
 dev.off()
@@ -87,7 +87,7 @@ initial_zoom <- initial_zoom + geom_point(size=2, aes(color=factor(z), shape=fac
 					 theme(legend.title=element_blank()) 
 initial_zoom <- initial_zoom + xlim(-1, 2) + ylim(-1, 2)
 initial_zoom <- initial_zoom + labs(x = "X - position",  y = "Y - position", 
-	title = " Initial Positions of Objects and Agents")
+	        title = " Initial Positions of Objects and Agents")
 initial_zoom <- initial_zoom + theme(plot.title = element_text(size = rel(2)))
 pdf("Initial Agents-Objects(zoomed).pdf", 7, 5)
 plot(initial_zoom)
